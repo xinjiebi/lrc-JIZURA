@@ -33,7 +33,7 @@ J.FONTS = {
   shippori:      { label: 'Shippori Mincho B1',        family: '"Shippori Mincho B1"', weight: 800, kind: 'mincho', fb: JP_SERIF_FB, gf: 'Shippori+Mincho+B1:wght@800' },
   sansui:        { label: 'IBM Plex Sans JP',          family: '"IBM Plex Sans JP"', weight: 500, kind: 'gothic', fb: JP_SANS_FB, gf: 'IBM+Plex+Sans+JP:wght@400;500;700' },
 };
-J.GOOGLE_FONTS_URL = 'https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@300;500;700;900&family=Noto+Serif+JP:wght@300;500;700&family=Zen+Kaku+Gothic+New:wght@900&family=Zen+Old+Mincho:wght@900&family=Kaisei+Tokumin:wght@800&family=M+PLUS+Rounded+1c:wght@800&family=Mochiy+Pop+One&family=DotGothic16&family=Yuji+Syuku&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+JP:wght@400;500;700&display=swap';
+J.GOOGLE_FONTS_URL = 'https://fonts.loli.net/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@300;500;700;900&family=Noto+Serif+JP:wght@300;500;700&family=Zen+Kaku+Gothic+New:wght@900&family=Zen+Old+Mincho:wght@900&family=Kaisei+Tokumin:wght@800&family=M+PLUS+Rounded+1c:wght@800&family=Mochiy+Pop+One&family=DotGothic16&family=Yuji+Syuku&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+JP:wght@400;500;700&display=swap';
 
 /* user fonts (local family names or uploaded files) */
 J.addUserFont = (key, label, family, weight = 400, kind = 'custom') => {
@@ -86,7 +86,7 @@ function attachFamily(spec) {
   if (cssJobs.has(spec)) return cssJobs.get(spec);
   const job = new Promise(res => {
     const l = document.createElement('link');
-    l.rel = 'stylesheet'; l.href = 'https://fonts.googleapis.com/css2?family=' + spec + '&display=swap';
+    l.rel = 'stylesheet'; l.href = 'https://fonts.loli.net/css2?family=' + spec + '&display=swap';
     const done = () => res(); l.onload = done; l.onerror = done; setTimeout(done, 5000);
     document.head.appendChild(l);
   });
